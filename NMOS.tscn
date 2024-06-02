@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh3wtqto2nw42"]
+
+[ext_resource type="Texture2D" uid="uid://c1wn3bv4wrqv7" path="res://res/nmos.png" id="1_mdtjq"]
+[ext_resource type="Script" path="res://NMOS.gd" id="1_tywm1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dd8xp"]
+size = Vector2(69, 84)
+
+[node name="NMOS" type="Area2D"]
+script = ExtResource("1_tywm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_dd8xp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.235294, 0.54902, 0.709804, 1)
+texture_filter = 1
+texture = ExtResource("1_mdtjq")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

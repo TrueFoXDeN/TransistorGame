@@ -1,15 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmu86jfygo7mk"]
+[gd_scene load_steps=2 format=3 uid="uid://dmu86jfygo7mk"]
 
 [ext_resource type="Script" path="res://GameControl.gd" id="1_0c87r"]
-[ext_resource type="Script" path="res://NMOS.gd" id="2_snjub"]
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_0c87r")
-
-[node name="NMOS_Transistor2" type="Node2D" parent="."]
-visible = false
-position = Vector2(491, -163)
-script = ExtResource("2_snjub")
 
 [node name="Add_PMOS" type="Button" parent="."]
 offset_right = 95.0
@@ -21,3 +15,9 @@ offset_left = 128.0
 offset_right = 223.0
 offset_bottom = 31.0
 text = "Add NMOS"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[connection signal="pressed" from="Add_PMOS" to="." method="_on_add_pmos_pressed"]
+[connection signal="pressed" from="Add_NMOs" to="." method="_on_add_nm_os_pressed"]
