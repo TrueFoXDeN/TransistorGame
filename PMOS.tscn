@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7gxq2qogff7f"]
+
+[ext_resource type="Script" path="res://PMOS.gd" id="1_8k56l"]
+
+[node name="Pmos" type="Node2D"]
+
+[node name="PMOS_Transistor" type="Node2D" parent="."]
+script = ExtResource("1_8k56l")
