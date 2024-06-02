@@ -13,15 +13,21 @@ func _ready():
 func _process(delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
+			Global.dragging = true
+			print('set dragging true')
 			offset = get_global_mouse_position() - global_position
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
+		if Input.is_action_just_released("click"):
+			Global.dragging = false
+			print('set dragging false')
 
 
 func _on_mouse_entered():
-	draggable = true
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.1).set_ease(Tween.EASE_OUT)
+	if not Global.dragging:
+		draggable = true
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.1).set_ease(Tween.EASE_OUT)
 
 
 
