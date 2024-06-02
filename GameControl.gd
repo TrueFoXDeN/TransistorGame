@@ -15,4 +15,5 @@ func _process(delta):
 func on_pmos_click():
 	print("PMOS Click")
 	var pmos_instance = pmos_scene.instantiate()
+	pmos_instance.position = Vector2(100, 100)
 	add_child(pmos_instance)
